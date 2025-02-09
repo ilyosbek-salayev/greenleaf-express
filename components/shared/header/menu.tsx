@@ -3,7 +3,7 @@ import CartButton from "./cart-button";
 
 export default function Menu() {
   return (
-    <div className="flex justify-end p-4">
+    <div className="flex justify-end">
       <nav className="flex gap-6 w-full">
         <Link href="/signin" className="flex items-center header-button ">
           Hello, Sign in
