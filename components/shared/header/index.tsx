@@ -9,7 +9,7 @@ import { APP_NAME } from '@/lib/constants'
 
    export default function Header() {
      return (
-       <header className='bg-green-700  text-white'>
+       <header className='bg-greenleaf  text-white'>
          <div className='px-2'>
            <div className='flex items-center justify-between'>
              <div className='flex items-center'>
