@@ -33,6 +33,30 @@ const data = {
         href: '/page/help',
       },
     ],
+
+    carousels: [
+        {
+          title: 'Biz endi yangi aksia elon qilamiz',
+          buttonCaption: 'Shop Now',
+          image: '/img/banner-3.png',
+          url: '/search?category=Shoes',
+          isPublished: true,
+        },
+        {
+          title: 'Biz bilan yanada go`zalashing',
+          buttonCaption: 'Shop Now',
+          image: '/img/banner-1.png',
+          url: '/search?category=T-Shirts',
+          isPublished: true,
+        },
+        {
+          title: 'Sog`lom oila, Greenleaf bilan',
+          buttonCaption: 'See More',
+          image: '/img/banner-2.png',
+          url: '/search?category=Wrist Watches',
+          isPublished: true,
+        },
+      ],
   }
 
   export default data
