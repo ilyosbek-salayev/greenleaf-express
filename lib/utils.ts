@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -63,4 +62,3 @@ export const formatError = (error: any): string => {
       : JSON.stringify(error.message)
   }
 }
-
