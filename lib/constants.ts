@@ -17,17 +17,17 @@ export const FREE_SHIPPING_MIN_PRICE = Number(
 
 export const AVAILABLE_PAYMENT_METHODS = [
   {
-    name: 'PayPal',
+    name: 'CliCk',
     commission: 0,
     isDefault: true,
   },
   {
-    name: 'Stripe',
+    name: 'telegramdan to`lov qilish',
     commission: 0,
     isDefault: false,
   },
   {
-    name: 'Cash On Delivery',
+    name: 'hisobni emailga yuborish',
     commission: 0,
     isDefault: false,
   },
