@@ -1,0 +1,13 @@
+NEXT_PUBLIC_APP_NAME=Greenlef-Express
+NEXT_PUBLIC_APP_SLOGAN=Spend less, enjoy more.
+NEXT_PUBLIC_APP_DESCRIPTION=Greenleaf Express, sizni uyingizgacha yetkazib beradi endilikda greenleaf mahsulotlari ostonangizgacha tezdanda tez boradi😊
+
+AUTH_SECRET=v7a59n6HN3COWeporDl4lxfKkL7UPkvVHOu0FDUetjA=
+
+MONGODB_URI=mongodb+srv://greenleaf-product:product123@greenleaf-express.bj2pe.mongodb.net/?retryWrites=true&w=majority&appName=greenleaf-express
+
+AUTH_GOOGLE_ID=1004851855178-hha5o467dh89fu061mv09ql6ajavnb7t.apps.googleusercontent.com
+AUTH_GOOGLE_SECRET=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
+
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
