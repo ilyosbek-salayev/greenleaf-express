@@ -1,8 +1,8 @@
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "greenleaf-express";
 export const SERVER_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+  process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3001'
 
-export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'ilyosbeksalayev240@gmail.com'
+export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'ilyosbeksalayev240@gmail.dev'
 export const SENDER_NAME = process.env.SENDER_NAME || APP_NAME
 export const APP_SLOGAN =
   process.env.NEXT_PUBLIC_APP_SLOGAN || "Spend less, enjoy more.";
@@ -29,12 +29,12 @@ export const AVAILABLE_PAYMENT_METHODS = [
   {
     name: 'telegramdan to`lov qilish',
     commission: 0,
-    isDefault: false,
+    isDefault: true,
   },
   {
     name: 'hisobni emailga yuborish',
     commission: 0,
-    isDefault: false,
+    isDefault: true,
   },
 ]
 export const DEFAULT_PAYMENT_METHOD =
