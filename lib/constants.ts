@@ -1,6 +1,5 @@
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "greenleaf-express";
-export const SERVER_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL || 'https://greenleaf-express.vercel.app'
+export const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'https://greenleaf-express.vercel.app/'
 
 export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'ilyosbeksalayev240@gmail.com'
 export const SENDER_NAME = process.env.SENDER_NAME || APP_NAME
