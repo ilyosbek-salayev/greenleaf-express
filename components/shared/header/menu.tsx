@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/dialog";
 // import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 
-export default function Menu() {
+export default function Menu({ forAdmin = false }: { forAdmin?: boolean }) {
   // const t = useTranslations()
   return (
     <div className="flex justify-end">
@@ -27,7 +27,7 @@ export default function Menu() {
         {/* <LanguageSwitcher /> */}
         <ThemeSwitcher />
         <UserButton />
-        {/* {forAdmin ? null : <CartButton />} */}
+        {forAdmin ? null : <CartButton />}
       </nav>
       <nav className="md:hidden">
         <Dialog>
