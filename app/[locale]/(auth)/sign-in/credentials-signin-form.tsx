@@ -29,8 +29,8 @@ const signInDefaultValues =
         password: '123456',
       }
     : {
-        email: '',
-        password: '',
+        email: 'ilyosbeksalayev240@gmail.com',
+        password: 'ilyosbeksalayev898',
       }
 
 export default function CredentialsSignInForm() {
