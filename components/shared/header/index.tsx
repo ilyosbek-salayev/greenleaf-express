@@ -7,14 +7,14 @@ import data from '@/lib/data'
 import Sidebar from './sidebar'
 import { getSetting } from '@/lib/actions/setting.actions'
 import { getTranslations } from 'next-intl/server'
-import './header.css'
+import './header'
 
 export default async function Header() {
   const categories = await getAllCategories()
   const { site } = await getSetting()
   const t = await getTranslations()
   return (
-    <header className='bg-green-600 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
+    <header className='header bg-green-600  text-white'>
       <div className='px-2'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center'>
@@ -41,7 +41,7 @@ export default async function Header() {
           <Search />
         </div>
       </div>
-      <div className='flex items-center px-3 mb-[1px]  bg-green-800 text-white'>
+      <div className='flex items-center px-3 mb-[1px]  bg-gray-800'>
         <Sidebar categories={categories} />
         <div className='flex items-center flex-wrap gap-3 overflow-hidden   max-h-[42px]'>
           {data.headerMenus.map((menu) => (
