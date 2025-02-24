@@ -25,12 +25,12 @@ import { isRedirectError } from 'next/dist/client/components/redirect-error'
 const signInDefaultValues =
   process.env.NODE_ENV === 'development'
     ? {
-        email: 'admin@example.com',
+        email: 'ilyosbeksalayev@gmail.com',
         password: '123456',
       }
     : {
-        email: 'ilyosbeksalayev240@gmail.com',
-        password: 'ilyosbeksalayev898',
+        email: '',
+        password: '',
       }
 
 export default function CredentialsSignInForm() {
