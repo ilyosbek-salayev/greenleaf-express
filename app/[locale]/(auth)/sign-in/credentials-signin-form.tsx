@@ -25,8 +25,8 @@ import { isRedirectError } from 'next/dist/client/components/redirect-error'
 const signInDefaultValues =
   process.env.NODE_ENV === 'development'
     ? {
-        email: 'ilyosbeksalayev@gmail.com',
-        password: '123456',
+        email: 'admin@example.com',
+        password: '123456a',
       }
     : {
         email: '',
@@ -54,7 +54,8 @@ export default function CredentialsSignInForm() {
         password: data.password,
       })
       redirect(callbackUrl)
-    } catch (error) {
+    } 
+    catch (error) {
       if (isRedirectError(error)) {
         throw error
       }

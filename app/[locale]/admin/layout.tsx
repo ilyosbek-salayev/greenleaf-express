@@ -14,7 +14,7 @@ export default async function AdminLayout({
   return (
     <>
       <div className='flex flex-col'>
-        <div className='bg-green-800 text-white'>
+        <div className='bg-green-800 text-yellow-400'>
           <div className='flex h-16 items-center px-2'>
             <Link href='/'>
               <Image
