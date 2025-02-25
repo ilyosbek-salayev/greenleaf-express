@@ -67,7 +67,8 @@ export default async function HomePage() {
       },
     },
   ]
-
+  // console.log(categories.map((category) => `/images/${toSlug(category)}.jpg`));
+  
   return (
     <>
       <HomeCarousel items={carousels} />

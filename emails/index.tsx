@@ -25,4 +25,6 @@ export const sendAskReviewOrderItems = async ({ order }: { order: IOrder }) => {
     react: <AskReviewOrderItemsEmail order={order} />,
     scheduledAt: oneDayFromNow,
   })
+
 }
+
