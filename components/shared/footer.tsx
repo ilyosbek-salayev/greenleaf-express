@@ -52,7 +52,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className='font-bold mb-2'>{t('Footer.Make Money with Us')}</h3>
+            
             <ul className='space-y-2'>
               <li>
                 <Link href='/page/sell'>

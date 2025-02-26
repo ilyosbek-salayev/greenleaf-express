@@ -6,13 +6,13 @@ import Search from "./search";
 // import data from "@/lib/data";
 import Sidebar from "./sidebar";
 import { getSetting } from "@/lib/actions/setting.actions";
-import { getTranslations } from "next-intl/server";
+
 import './header.css'
 
 export default async function Header() {
   const categories = await getAllCategories();
   const { site } = await getSetting();
-  const t = await getTranslations();
+ 
   return (
     <header className="bg-green-600  text-white">
       <div className="px-2">
@@ -41,20 +41,12 @@ export default async function Header() {
           <Search />
         </div>
       </div>
-      <div className="flex items-center justify-between px-3 mb-[1px]  bg-yellow-900">
+      <div className=" flex items-center justify-between px-3 mb-[1px] p-1 bg-green-900">
         <Sidebar categories={categories} />
         <div className="flex items-center flex-wrap gap-6 overflow-hidden  max-h-[42px]">
-          <div className="hover:text-green-600 sidetext !p-2 flex gap-8 ">
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
-            <span>{t(`Greenleaf Express`)}</span>
+          <div className="hover:text-green-600 sidetext  flex gap-8">
+            <span className="p-2 text-center bg-black">Greenleaf Express</span>
+            
           </div>
         </div>
       </div>
