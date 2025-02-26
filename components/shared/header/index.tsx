@@ -40,16 +40,17 @@ export default async function Header() {
           <Search />
         </div>
       </div>
-      <div className='flex items-center px-3 mb-[1px]  bg-gray-800'>
+      <div className='flex items-center px-3 mb-[1px]  bg-yellow-800'>
         <Sidebar categories={categories} />
-        <div className='flex items-center flex-wrap gap-3 overflow-hidden   max-h-[42px]'>
+        <div className='flex items-center flex-wrap gap-8 overflow-hidden  max-h-[42px]'>
           {data.headerMenus.map((menu) => (
             <Link
               href={menu.href}
               key={menu.href}
               className='header-button !p-2 '
             >
-              {t('Header.' + menu.name)}
+              {/* {t('Header.' + menu.name)} */}
+              <p>Greenleaf Express</p>
             </Link>
           ))}
         </div>

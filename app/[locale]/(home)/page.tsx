@@ -38,41 +38,42 @@ export default async function HomePage() {
       },
       items: categories.map((category) => ({
         name: category,
-        image: `/images/${toSlug(category)}.jpg`,
+        image: `/images/${category}.jpg`,
         href: `/search?category=${category}`,
-      })),
-    },
-    {
-      title: t('Explore New Arrivals'),
-      items: newArrivals,
-      link: {
-        text: t('View All'),
-        href: '/search?tag=new-arrival',
       },
+    )),
     },
-    {
-      title: t('Discover Best Sellers'),
-      items: bestSellers,
-      link: {
-        text: t('View All'),
-        href: '/search?tag=new-arrival',
-      },
-    },
-    {
-      title: t('Featured Products'),
-      items: featureds,
-      link: {
-        text: t('Shop Now'),
-        href: '/search?tag=new-arrival',
-      },
-    },
+    // {
+    //   title: t('Explore New Arrivals'),
+    //   items: newArrivals,
+    //   link: {
+    //     text: t('View All'),
+    //     href: '/search?tag=new-arrival',
+    //   },
+    // },
+    // {
+    //   title: t('Discover Best Sellers'),
+    //   items: bestSellers,
+    //   link: {
+    //     text: t('View All'),
+    //     href: '/search?tag=new-arrival',
+    //   },
+    // },
+    // {
+    //   title: t('Featured Products'),
+    //   items: featureds,
+    //   link: {
+    //     text: t('Shop Now'),
+    //     href: '/search?tag=new-arrival',
+    //   },
+    // },
   ]
 
   return (
     <>
       <HomeCarousel items={carousels} />
       <div className='md:p-4 md:space-y-4 bg-border'>
-        <HomeCard cards={cards} />
+        <HomeCard className='w-full' cards={cards} />
         <Card className='w-full rounded-none'>
           <CardContent className='p-4 items-center gap-3'>
             <ProductSlider title={t("Today's Deals")} products={todaysDeals} />
