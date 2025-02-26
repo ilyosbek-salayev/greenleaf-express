@@ -24,7 +24,7 @@ export default function Footer() {
   const locale = useLocale()
   const t = useTranslations()
   return (
-    <footer className='bg-black  text-white underline-link'>
+    <footer className='bg-green-950  text-white underline-link'>
       <div className='w-full'>
         <Button
           variant='ghost'
@@ -32,62 +32,62 @@ export default function Footer() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <ChevronUp className='mr-2 h-4 w-4' />
-          {t('Footer.Back to top')}
+          Footer.Back to top
         </Button>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-6 max-w-7xl mx-auto'>
           <div>
-            <h3 className='font-bold mb-2'>{t('Footer.Get to Know Us')}</h3>
-            <ul className='space-y-2'>
+            <h3 className='font-bold mb-2'>Footer</h3>
+            {/* <ul className='space-y-2'>
               <li>
-                <Link href='/page/careers'>{t('Footer.Careers')}</Link>
+                <Link href='/page/careers'>Footer.Careers</Link>
               </li>
               <li>
-                <Link href='/page/blog'>{t('Footer.Blog')}</Link>
+                <Link href='/page/blog'>Footer.Blog</Link>
               </li>
               <li>
                 <Link href='/page/about-us'>
                   {t('Footer.About name', { name: site.name })}
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
           <div>
-            
-            <ul className='space-y-2'>
+            <h2>Footer Pages</h2>
+            {/* <ul className='space-y-2'>
               <li>
                 <Link href='/page/sell'>
-                  {t('Footer.Sell products on', { name: site.name })}
+                  Footer.Sell products on
                 </Link>
               </li>
               <li>
                 <Link href='/page/become-affiliate'>
-                  {t('Footer.Become an Affiliate')}
+                  Footer.Become an Affiliate
                 </Link>
               </li>
               <li>
                 <Link href='/page/advertise'>
-                  {t('Footer.Advertise Your Products')}
+                  Footer.Advertise Your Products
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
           <div>
-            <h3 className='font-bold mb-2'>{t('Footer.Let Us Help You')}</h3>
-            <ul className='space-y-2'>
+            <h3 className='font-bold mb-2'>Footer Help </h3>
+            {/* <ul className='space-y-2'>
               <li>
                 <Link href='/page/shipping'>
-                  {t('Footer.Shipping Rates & Policies')}
+                  Footer.Shipping Rates & Policies
                 </Link>
               </li>
               <li>
                 <Link href='/page/returns-policy'>
-                  {t('Footer.Returns & Replacements')}
+                  Footer.Returns & Replacements
                 </Link>
               </li>
               <li>
-                <Link href='/page/help'>{t('Footer.Help')}</Link>
+                <Link href='/page/help'>Footer.Help</Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
         <div className='border-t border-gray-800'>
@@ -154,10 +154,10 @@ export default function Footer() {
       <div className='p-4'>
         <div className='flex justify-center  gap-3 text-sm'>
           <Link href='/page/conditions-of-use'>
-            {t('Footer.Conditions of Use')}
+            Footer.Conditions of Use
           </Link>
-          <Link href='/page/privacy-policy'>{t('Footer.Privacy Notice')}</Link>
-          <Link href='/page/help'>{t('Footer.Help')}</Link>
+          <Link href='/page/privacy-policy'>Footer.Privacy Notice</Link>
+          <Link href='/page/help'>Footer.Help</Link>
         </div>
         <div className='flex justify-center text-sm'>
           <p> © {site.copyright}</p>
