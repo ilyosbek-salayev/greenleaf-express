@@ -44,14 +44,13 @@ export default async function Header() {
         <Sidebar categories={categories} />
         <div className='flex items-center flex-wrap gap-8 overflow-hidden  max-h-[42px]'>
           {data.headerMenus.map((menu) => (
-            <Link
-              href={menu.href}
-              key={menu.href}
+            <div
+              
               className='header-button !p-2 '
             >
               {/* {t('Header.' + menu.name)} */}
               <p>Greenleaf Express</p>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
