@@ -8,6 +8,7 @@ import {
   // getProductsForCard,
   getProductsByTag,
   getAllCategories,
+  getProductsForCard,
 } from '@/lib/actions/product.actions'
 import { getSetting } from '@/lib/actions/setting.actions'
 import { toSlug } from '@/lib/utils'
@@ -20,20 +21,20 @@ export default async function HomePage() {
   const bestSellingProducts = await getProductsByTag({ tag: 'best-seller' })
 
   const categories = (await getAllCategories()).slice(0, 4)
-  // const newArrivals = await getProductsForCard({
-  //   tag: 'new-arrival',
-  // })
-  // const featureds = await getProductsForCard({
-  //   tag: 'featured',
-  // })
-  // const bestSellers = await getProductsForCard({
-  //   tag: 'best-seller',
-  // })
+  const newArrivals = await getProductsForCard({
+    tag: 'new-arrival',
+  })
+  const featureds = await getProductsForCard({
+    tag: 'featured',
+  })
+  const bestSellers = await getProductsForCard({
+    tag: 'best-seller',
+  })
   const cards = [
     {
       title: t('Categories to explore'),
       link: {
-        text: t('See More'),
+        text: t('To`liq mahsulotlar ->'),
         href: '/search',
       },
       items: categories.map((category) => ({
@@ -41,8 +42,31 @@ export default async function HomePage() {
         image: `/images/${toSlug(category)}.jpg`,
         href: `/search?category=${category}`,
       })),
+    },
+    {
+      title: t('Explore New Arrivals'),
+      items: newArrivals,
+      link: {
+        text: t('vaqtinchalik ishda emas'),
+        href: '/search?tag=new-arrival',
+      },
+    },
+    {
+      title: t('Discover Best Sellers'),
+      items: bestSellers,
+      link: {
+        text: t('vaqtinchalik ishda emas'),
+        href: '/search?tag=new-arrival',
+      },
+    },
+    {
+      title: t('Featured Products'),
+      items: featureds,
+      link: {
+        text: t('vaqtinchalik ishda emas'),
+        href: '/search?tag=new-arrival',
+      },
     }
-    
   ]
 
   return (
