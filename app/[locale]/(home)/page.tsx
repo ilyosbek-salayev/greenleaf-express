@@ -5,12 +5,12 @@ import ProductSlider from '@/components/shared/product/product-slider'
 import { Card, CardContent } from '@/components/ui/card'
 
 import {
-  getProductsForCard,
+  // getProductsForCard,
   getProductsByTag,
   getAllCategories,
+  getProductsForCard,
 } from '@/lib/actions/product.actions'
 import { getSetting } from '@/lib/actions/setting.actions'
-import { toSlug } from '@/lib/utils'
 import { getTranslations } from 'next-intl/server'
 
 export default async function HomePage() {
@@ -33,39 +33,39 @@ export default async function HomePage() {
     {
       title: t('Categories to explore'),
       link: {
-        text: t('See More'),
+        text: 'To`liq mahsulotlar ->',
         href: '/search',
       },
       items: categories.map((category) => ({
         name: category,
-        image: `/images/${toSlug(category)}.jpg`,
+        image: `/images/category.jpg`,
         href: `/search?category=${category}`,
       })),
     },
     {
-      title: t('Explore New Arrivals'),
+      title: 'Explore New Arrivals',
       items: newArrivals,
       link: {
-        text: t('View All'),
+        text: 'vaqtinchalik ishda emas',
         href: '/search?tag=new-arrival',
       },
     },
     {
-      title: t('Discover Best Sellers'),
+      title: 'Discover Best Sellers',
       items: bestSellers,
       link: {
-        text: t('View All'),
+        text: 'vaqtinchalik ishda emas',
         href: '/search?tag=new-arrival',
       },
     },
     {
-      title: t('Featured Products'),
+      title: 'Featured Products',
       items: featureds,
       link: {
-        text: t('Shop Now'),
+        text: 'vaqtinchalik ishda emas',
         href: '/search?tag=new-arrival',
       },
-    },
+    }
   ]
   // console.log(categories.map((category) => `/images/${toSlug(category)}.jpg`));
   

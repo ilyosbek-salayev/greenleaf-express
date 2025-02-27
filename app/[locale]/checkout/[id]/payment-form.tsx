@@ -40,7 +40,6 @@ export default function OrderDetailsForm({
     shippingAddress,
     items,
     itemsPrice,
-    taxPrice,
     shippingPrice,
     totalPrice,
     paymentMethod,
@@ -107,11 +106,7 @@ export default function OrderDetailsForm({
             <div className='flex justify-between'>
               <span> Tax:</span>
               <span>
-                {taxPrice === undefined ? (
-                  '--'
-                ) : (
-                  <ProductPrice price={taxPrice} plain />
-                )}
+                FREE
               </span>
             </div>
             <div className='flex justify-between  pt-1 font-bold text-lg'>

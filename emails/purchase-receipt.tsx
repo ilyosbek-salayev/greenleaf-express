@@ -48,7 +48,7 @@ PurchaseReceiptEmail.PreviewProps = {
       {
         clientId: '123',
         name: 'Product 1',
-        image: 'https://via.placeholder.com/150',
+        image: 'https://placehold.co/150',
         price: 100,
         quantity: 1,
         product: '123',
