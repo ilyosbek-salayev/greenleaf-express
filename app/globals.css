@@ -96,3 +96,54 @@ body {
     @apply flex justify-between items-center;
   }
 }
+
+/* Navbar */
+.navbar {
+  @apply flex items-center justify-between bg-green-600 p-3;
+}
+
+.navbar .logo {
+  @apply text-white text-xl font-bold flex items-center gap-2;
+}
+
+.navbar .search-bar {
+  @apply flex items-center bg-white rounded-md overflow-hidden w-full max-w-xs;
+}
+
+.navbar input {
+  @apply p-2 w-full outline-none;
+}
+
+.navbar .search-icon {
+  @apply bg-yellow-400 p-2 rounded-r-md;
+}
+
+/* Kategoriyalar (Slider) */
+.category-slider {
+  @apply flex overflow-x-auto space-x-3 px-4 py-2;
+  scrollbar-width: none; /* Firefox uchun */
+}
+
+.category-slider::-webkit-scrollbar {
+  display: none; /* Chrome va Safari uchun */
+}
+
+.category-item {
+  @apply flex-shrink-0 bg-white shadow-md px-4 py-2 rounded-lg text-sm font-semibold;
+}
+
+/* Mobil responsivlik */
+@media (max-width: 768px) {
+  .navbar {
+    @apply flex-col space-y-2;
+  }
+
+  .category-slider {
+    @apply px-2 py-1 space-x-2;
+  }
+
+  .category-item {
+    @apply px-3 py-1 text-xs;
+  }
+}
+
