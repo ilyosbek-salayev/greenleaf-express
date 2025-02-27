@@ -206,7 +206,7 @@ const CheckoutForm = () => {
             <div className='flex justify-between'>
               <span>Items:</span>
               <span>
-                FREE
+                <ProductPrice price={itemsPrice} plain />
               </span>
             </div>
             <div className='flex justify-between'>
@@ -224,7 +224,11 @@ const CheckoutForm = () => {
             <div className='flex justify-between'>
               <span> Tax:</span>
               <span>
-                FREE
+                {taxPrice === undefined ? (
+                  '--'
+                ) : (
+                  <ProductPrice price={taxPrice} plain />
+                )}
               </span>
             </div>
             <div className='flex justify-between  pt-4 font-bold text-lg'>
