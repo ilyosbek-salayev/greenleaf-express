@@ -119,9 +119,9 @@ export const OrderInputSchema = z.object({
     })
     .optional(),
   itemsPrice: Price('Items price'),
-  shippingPrice: z.literal(0),  // Doim 0 bo'ladi
-  taxPrice: z.literal(0),  // Doim 0 bo'ladi
-  totalPrice: Price('Items price'),  // Faqat mahsulot bahosi
+  shippingPrice: Price('Shipping price'),
+  taxPrice: Price('Tax price'),
+  totalPrice: Price('Total price'),
   expectedDeliveryDate: z
     .date()
     .refine(
@@ -140,8 +140,8 @@ export const CartSchema = z.object({
     .array(OrderItemSchema)
     .min(1, 'Order must contain at least one item'),
   itemsPrice: z.number(),
-  taxPrice: z.literal(0),  // Doim 0 bo'ladi
-  shippingPrice: z.literal(0),  // Doim 0 bo'ladi
+  taxPrice: z.optional(z.number()),
+  shippingPrice: z.optional(z.number()),
   totalPrice: z.number(),
   paymentMethod: z.optional(z.string()),
   shippingAddress: z.optional(ShippingAddressSchema),
