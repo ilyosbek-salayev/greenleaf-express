@@ -7,8 +7,8 @@ import { calcDeliveryDateAndPrice } from '@/lib/actions/order.actions'
 const initialState: Cart = {
   items: [],
   itemsPrice: 0,
-  taxPrice: 0,
-  shippingPrice: 0,
+  taxPrice: undefined,
+  shippingPrice: undefined,
   totalPrice: 0,
   paymentMethod: undefined,
   shippingAddress: undefined,
