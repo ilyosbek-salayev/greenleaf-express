@@ -31,12 +31,6 @@ export async function generateMetadata() {
     description: description,
     metadataBase: new URL(url),
 
-    icons: {
-      icon: '/logo.svg', // 32x32 yoki 16x16 favicon.ico
-      shortcut: '/logo.svg',
-      apple: '/apple-touch-icon.png', // iPhone va iPad uchun
-    },
-
     openGraph: {
       title: `${name} | ${slogan}`,
       description: description,
@@ -58,7 +52,7 @@ export async function generateMetadata() {
       site: '@your_twitter_handle', // O'z Twitteringizni qo'shing
       title: `${name} | ${slogan}`,
       description: description,
-      images: [`${url}/twitter-image.jpg`], // Twitter uchun maxsus rasm
+      images: [`${url}/burgut.jpg`], // Twitter uchun maxsus rasm
     },
 
     alternates: {
@@ -107,7 +101,7 @@ export default async function AppLayout({
     "name": "Greenleaf Express",
     "url": "https://greenleaf-express.uz",
     "description": "greenleaf mahsulotlari uyingizga boradi",
-    "image": "https://greenleaf-express.uz/logo.svg",
+    "image": "https://greenleaf-express.uz/burgut.jpg",
     "sameAs": [
       "https://facebook.com/greenleaf-express",
       "https://twitter.com/greenleaf-express",
