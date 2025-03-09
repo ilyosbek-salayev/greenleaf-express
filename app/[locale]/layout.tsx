@@ -30,7 +30,7 @@ export async function generateMetadata() {
     },
     description: description,
     metadataBase: new URL(url),
-    
+
     icons: {
       icon: '/logo.svg', // 32x32 yoki 16x16 favicon.ico
       shortcut: '/logo.svg',
@@ -78,7 +78,7 @@ export async function generateMetadata() {
       },
     }
 
-    
+
   }
 }
 
@@ -123,6 +123,12 @@ export default async function AppLayout({
       dir={getDirection(locale) === 'rtl' ? 'rtl' : 'ltr'}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
