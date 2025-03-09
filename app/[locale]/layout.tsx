@@ -30,6 +30,55 @@ export async function generateMetadata() {
     },
     description: description,
     metadataBase: new URL(url),
+    
+    icons: {
+      icon: '/logo.svg', // 32x32 yoki 16x16 favicon.ico
+      shortcut: '/logo.svg',
+      apple: '/apple-touch-icon.png', // iPhone va iPad uchun
+    },
+
+    openGraph: {
+      title: `${name} | ${slogan}`,
+      description: description,
+      url: url,
+      siteName: name,
+      type: 'website',
+      images: [
+        {
+          url: `${url}/logo.svg`, // Saytingiz uchun maxsus Open Graph rasm
+          width: 1200,
+          height: 630,
+          alt: `${name} banner image`,
+        },
+      ],
+    },
+
+    Twitter: {
+      card: 'summary_large_image',
+      site: '@your_twitter_handle', // O'z Twitteringizni qo'shing
+      title: `${name} | ${slogan}`,
+      description: description,
+      images: [`${url}/twitter-image.jpg`], // Twitter uchun maxsus rasm
+    },
+
+    alternates: {
+      canonical: url,
+    },
+
+    keywords: ['your', 'main', 'keywords', 'SEO', 'optimized'],
+
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+      },
+    }
+
+    
   }
 }
 
@@ -52,7 +101,23 @@ export default async function AppLayout({
   }
   const messages = await getMessages()
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Greenleaf Express",
+    "url": "https://greenleaf-express.uz",
+    "description": "greenleaf mahsulotlari uyingizga boradi",
+    "image": "https://greenleaf-express.uz/logo.svg",
+    "sameAs": [
+      "https://facebook.com/greenleaf-express",
+      "https://twitter.com/greenleaf-express",
+      "https://instagram.com/greenleaf-express"
+    ]
+  }
+
   return (
+
+
     <html
       lang={locale}
       dir={getDirection(locale) === 'rtl' ? 'rtl' : 'ltr'}
