@@ -45,7 +45,7 @@ export async function generateMetadata() {
       type: 'website',
       images: [
         {
-          url: `${url}/logo.svg`, // Saytingiz uchun maxsus Open Graph rasm
+          url: `${url}/burgut.jpg`, // Saytingiz uchun maxsus Open Graph rasm
           width: 1200,
           height: 630,
           alt: `${name} banner image`,
