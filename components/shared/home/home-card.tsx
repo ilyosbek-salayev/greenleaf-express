@@ -40,7 +40,7 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
           </CardContent>
           {card.link && (
             <CardFooter>
-              <Link href={card.link.href} className='mt-2 text-blue-600 hover:underline text-sm'>
+              <Link href={card.link.href} className='mt-2 text-green-600 hover:underline text-sm'>
                 {card.link.text}
               </Link>
             </CardFooter>

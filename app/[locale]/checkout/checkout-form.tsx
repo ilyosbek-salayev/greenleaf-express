@@ -154,6 +154,7 @@ const CheckoutForm = () => {
   const handleSelectShippingAddress = () => {
     shippingAddressForm.handleSubmit(onSubmitShippingAddress)()
   }
+
   const CheckoutSummary = () => (
     <Card>
       <CardContent className='p-4'>
@@ -222,19 +223,23 @@ const CheckoutForm = () => {
               </span>
             </div>
             <div className='flex justify-between'>
-              <span> Tax:</span>
+              <div className='columns'>
+                <span>Tax:</span>
+              </div>
               <span>
                 {taxPrice === undefined ? (
                   '--'
-                ) : (
-                  <ProductPrice price={taxPrice} plain />
+                ):
+                (
+                  'FREE'
                 )}
               </span>
+              
             </div>
             <div className='flex justify-between  pt-4 font-bold text-lg'>
               <span> Order Total:</span>
               <span>
-                <ProductPrice price={totalPrice} plain />
+                <ProductPrice price={itemsPrice} plain />
               </span>
             </div>
           </div>
@@ -301,10 +306,10 @@ const CheckoutForm = () => {
                             name='fullName'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>Full Name</FormLabel>
+                                <FormLabel>to'liq ismigz</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder='Enter full name'
+                                    placeholder='To`liq ismingzni kriting masalan "Nuriddin Salayev" '
                                     {...field}
                                   />
                                 </FormControl>
@@ -319,10 +324,10 @@ const CheckoutForm = () => {
                             name='street'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>Address</FormLabel>
+                                <FormLabel>yashab turgan joyingiz</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder='Enter address'
+                                    placeholder='kriting manzilni (Mahala/Ko`cha/uy misol => "zarafshon/11-uy"'
                                     {...field}
                                   />
                                 </FormControl>
@@ -337,9 +342,9 @@ const CheckoutForm = () => {
                             name='city'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>City</FormLabel>
+                                <FormLabel>Shahar yoki Tuman</FormLabel>
                                 <FormControl>
-                                  <Input placeholder='Enter city' {...field} />
+                                  <Input placeholder='Shahringiz nomini yozing' {...field} />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -350,7 +355,7 @@ const CheckoutForm = () => {
                             name='province'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>Province</FormLabel>
+                                <FormLabel>province/viloyat</FormLabel>
                                 <FormControl>
                                   <Input
                                     placeholder='Enter province'
@@ -366,10 +371,10 @@ const CheckoutForm = () => {
                             name='country'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>Country</FormLabel>
+                                <FormLabel>Vataningz nomi</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder='Enter country'
+                                    placeholder='Vataningz nomini kriting...'
                                     {...field}
                                   />
                                 </FormControl>
@@ -384,10 +389,10 @@ const CheckoutForm = () => {
                             name='postalCode'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>Postal Code</FormLabel>
+                                <FormLabel>siz qabul qilib olishingz uchun buyurtmangizga parol yarating</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder='Enter postal code'
+                                    placeholder='Buyurtma paroli misol "Nuriddin 93"'
                                     {...field}
                                   />
                                 </FormControl>
@@ -400,10 +405,11 @@ const CheckoutForm = () => {
                             name='phone'
                             render={({ field }) => (
                               <FormItem className='w-full'>
-                                <FormLabel>Phone number</FormLabel>
+                                <FormLabel>Telefon Raqam</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder='Enter phone number'
+                                    placeholder='Telefon Raqamingzni kriting...'
+                                    
                                     {...field}
                                   />
                                 </FormControl>
@@ -416,9 +422,9 @@ const CheckoutForm = () => {
                       <CardFooter className='  p-4'>
                         <Button
                           type='submit'
-                          className='rounded-full font-bold'
+                          className ='rounded-full font-bold'
                         >
-                          Ship to this address
+                          So'rovni Tasdiqlash
                         </Button>
                       </CardFooter>
                     </Card>
@@ -689,7 +695,7 @@ const CheckoutForm = () => {
                   </Button>
                   <div className='flex-1'>
                     <p className='font-bold text-lg'>
-                      Order Total: <ProductPrice price={totalPrice} plain />
+                      Order Total: <ProductPrice price={itemsPrice} plain />
                     </p>
                     <p className='text-xs'>
                       {' '}
