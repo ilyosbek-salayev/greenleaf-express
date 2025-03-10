@@ -223,9 +223,7 @@ const CheckoutForm = () => {
               </span>
             </div>
             <div className='flex justify-between'>
-              <div className='columns'>
                 <span>Tax:</span>
-              </div>
               <span>
                 {taxPrice === undefined ? (
                   '--'
