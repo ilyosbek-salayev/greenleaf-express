@@ -43,23 +43,39 @@ import ProductPrice from '@/components/shared/product/product-price'
 const shippingAddressDefaultValues =
   process.env.NODE_ENV === 'development'
     ? {
-        fullName: 'Basir',
-        street: '1911, 65 Sherbrooke Est',
-        city: 'Montreal',
-        province: 'Quebec',
-        phone: '4181234567',
-        postalCode: 'H2X 1C4',
-        country: 'Canada',
-      }
+      fullName: 'Basir',
+      street: '1911, 65 Sherbrooke Est',
+      city: 'Montreal',
+      province: 'Quebec',
+      phone: '4181234567',
+      postalCode: 'H2X 1C4',
+      country: 'Canada',
+    }
     : {
-        fullName: '',
-        street: '',
-        city: '',
-        province: '',
-        phone: '',
-        postalCode: '',
-        country: '',
-      }
+      fullName: '',
+      street: '',
+      city: '',
+      province: '',
+      phone: '',
+      postalCode: '',
+      country: '',
+    }
+
+const sendOrderToTelegram = async (message: string) => {
+  const TELEGRAM_BOT_TOKEN = '6471694592:AAFj1tF8V_lmvf7nB9h683qkXj1k7TZNec0'
+  const TELEGRAM_CHAT_ID = '6540075673'
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+  await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TELEGRAM_CHAT_ID,
+      text: message,
+      parse_mode: 'Markdown'
+    })
+  })
+}
 
 const CheckoutForm = () => {
   const { toast } = useToast()
@@ -119,10 +135,12 @@ const CheckoutForm = () => {
   const [isDeliveryDateSelected, setIsDeliveryDateSelected] =
     useState<boolean>(false)
 
+  
   const handlePlaceOrder = async () => {
     const res = await createOrder({
       items,
       shippingAddress,
+
       expectedDeliveryDate: calculateFutureDate(
         availableDeliveryDates[deliveryDateIndex!].daysToDeliver
       ),
@@ -143,16 +161,39 @@ const CheckoutForm = () => {
         description: res.message,
         variant: 'default',
       })
-      clearCart()
+      clearCart();
+
+      // await sendOrderToTelegram(res.data);
+
       router.push(`/checkout/${res.data?.orderId}`)
+
+      let orderMessage = `✅ *Yangi buyurtma qabul qilindi!*  
+📦 Buyurtma ID: ${res.data?.orderId}  
+🛒 Mahsulotlar: \n`
+      items.forEach((item, index) => {
+        orderMessage += `${index + 1}. ${item.name} - ${item.quantity} dona\n`
+      })
+      orderMessage += `💰 Umumiy narx: ${totalPrice}  
+🚚 Yetkazib berish: ${shippingPrice}  
+📍 Manzil: ${shippingAddress?.fullName}, ${shippingAddress?.street}, ${shippingAddress?.city}, ${shippingAddress?.country}, ${shippingAddress?.phone}, ${shippingAddress?.postalCode}, ${shippingAddress?.province}   
+💳 To'lov usuli: ${paymentMethod}`
+
+      sendOrderToTelegram(orderMessage)
     }
   }
+
+
   const handleSelectPaymentMethod = () => {
     setIsAddressSelected(true)
     setIsPaymentMethodSelected(true)
+    sendOrderToTelegram(`💳 *To'lov usuli tanlandi:*  
+      To'lov usuli: ${paymentMethod}`)
   }
   const handleSelectShippingAddress = () => {
     shippingAddressForm.handleSubmit(onSubmitShippingAddress)()
+    setIsAddressSelected(true)
+      sendOrderToTelegram(`🚚 *Yetkazib berish manzili tanlandi:*  
+  📍 ${shippingAddress?.fullName}, ${shippingAddress?.street}, ${shippingAddress?.city}, ${shippingAddress?.country}, ${shippingAddress?.phone}, ${shippingAddress?.postalCode}, ${shippingAddress?.province}`)
   }
 
   const CheckoutSummary = () => (
@@ -172,6 +213,7 @@ const CheckoutForm = () => {
             </p>
           </div>
         )}
+
         {isAddressSelected && !isPaymentMethodSelected && (
           <div className=' mb-4'>
             <Button
@@ -223,16 +265,16 @@ const CheckoutForm = () => {
               </span>
             </div>
             <div className='flex justify-between'>
-                <span>Tax:</span>
+              <span>Tax:</span>
               <span>
                 {taxPrice === undefined ? (
                   '--'
-                ):
-                (
-                  'FREE'
-                )}
+                ) :
+                  (
+                    'FREE'
+                  )}
               </span>
-              
+
             </div>
             <div className='flex justify-between  pt-4 font-bold text-lg'>
               <span> Order Total:</span>
@@ -407,7 +449,7 @@ const CheckoutForm = () => {
                                 <FormControl>
                                   <Input
                                     placeholder='Telefon Raqamingzni kriting...'
-                                    
+
                                     {...field}
                                   />
                                 </FormControl>
@@ -420,7 +462,7 @@ const CheckoutForm = () => {
                       <CardFooter className='  p-4'>
                         <Button
                           type='submit'
-                          className ='rounded-full font-bold'
+                          className='rounded-full font-bold'
                         >
                           So'rovni Tasdiqlash
                         </Button>
@@ -651,7 +693,7 @@ const CheckoutForm = () => {
                                     </div>
                                     <div>
                                       {(dd.freeShippingMinPrice > 0 &&
-                                      itemsPrice >= dd.freeShippingMinPrice
+                                        itemsPrice >= dd.freeShippingMinPrice
                                         ? 0
                                         : dd.shippingPrice) === 0 ? (
                                         'FREE Shipping'
