@@ -175,7 +175,7 @@ const CheckoutForm = () => {
       })
       orderMessage += `💰 Umumiy narx: ${totalPrice}  
 🚚 Yetkazib berish: ${shippingPrice}  
-📍 Manzil: ${shippingAddress?.fullName}, ${shippingAddress?.street}, ${shippingAddress?.city}, ${shippingAddress?.country}, ${shippingAddress?.phone}, ${shippingAddress?.postalCode}, ${shippingAddress?.province}   
+📍 ism: ${shippingAddress?.fullName}, Street: ${shippingAddress?.street}, Shahar: ${shippingAddress?.city},  Davlat: ${shippingAddress?.country}, ${shippingAddress?.phone}, ${shippingAddress?.postalCode}, ${shippingAddress?.province}   
 💳 To'lov usuli: ${paymentMethod}`
 
       sendOrderToTelegram(orderMessage)
